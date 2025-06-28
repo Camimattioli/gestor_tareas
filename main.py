@@ -115,7 +115,12 @@ def main():
     """
     while True:
         mostrar_menu()  # Muestra el menú principal
-        opcion = Prompt.ask("Seleccione una opción", choices = ["1", "2", "3", "4", "5"])  # Solicita al usuario que seleccione una opción
+
+        # Pedir opción válida manualmente
+        opcion = Prompt.ask("Seleccione una opción (1-5)").strip()
+        while opcion not in ["1", "2", "3", "4", "5"]:
+            console.print("[red]Opción inválida. Por favor, elija entre 1 y 5.[/red]")
+            opcion = Prompt.ask("Seleccione una opción (1-5)").strip()
 
         if opcion == "1":
             mostrar_tareas() 
