@@ -12,7 +12,7 @@ Este proyecto es un gestor de tareas hecho en Python que permite:
 - Guardado persistente de tareas en archivo JSON (`tareas.json`).
 - Registro de acciones importantes en un archivo de logs (`registro.log`).
 - Manejo de errores comunes (IDs inválidos, problemas con archivos).
-- Interfaz de usuario enriquecida con la librería externa [Rich](https://github.com/Textualize/rich).
+- Uso de la librería externa [Rich](https://github.com/Textualize/rich), que ayuda en la presentación de la interfaz del usuario.
 - Código modular y fácil de mantener (separación entre lógica y presentación).
 - Archivo `requirements.txt` para gestionar dependencias.
 
@@ -30,12 +30,13 @@ gestor_tareas/
 - Python 3.x
 - Librería externa: `rich` 
 
-# Instalacion 
+# Instalacion desde consola
 1. Crear entorno virtual: python -m venv nombre_del_entorno
+
 2. Activar entorno: 
-- python -m venv venv
 - source venv/bin/activate  # En Linux/macOS
 - venv\Scripts\activate     # En Windows
+
 3. Instalar dependencias: pip install -r requirements.txt
 
 # Uso
@@ -46,6 +47,7 @@ gestor_tareas/
 - Completar una tarea existente
 - Eliminar una tarea
 - Salir del programa
+
 Las tareas se almacenan en tareas.json y cada acción queda registrada en registro.log.
 
 # Ejemplos:

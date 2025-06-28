@@ -118,16 +118,16 @@ def main():
         opcion = Prompt.ask("Seleccione una opción", choices = ["1", "2", "3", "4", "5"])  # Solicita al usuario que seleccione una opción
 
         if opcion == "1":
-            mostrar_tareas()  # Muestra todas las tareas
+            mostrar_tareas() 
         elif opcion == "2":
-            agregar_tarea()  # Agrega una nueva tarea
+            agregar_tarea() 
         elif opcion == "3":
-            completar_tarea()  # Marca una tarea como completada
+            completar_tarea()  
         elif opcion == "4":
-            eliminar_tarea()  # Elimina una tarea
+            eliminar_tarea()  
         elif opcion == "5":
             console.print("[bold cyan]Saliendo del gestor de tareas...[/bold cyan]")  # Mensaje de salida
-            break  # Sale del bucle y termina el programa
+            break  
 
 if __name__ == "__main__":
     main()  # Llama a la función principal para iniciar el programa
