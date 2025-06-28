@@ -18,49 +18,49 @@ Este proyecto es un gestor de tareas hecho en Python que permite:
 
 # Estructura del Proyecto
 gestor_tareas/
-│
-├── main.py # Archivo principal con menú interactivo
-├── tareas.py # Funciones para manejar tareas
-├── tareas.json # Archivo JSON para persistencia de datos
-├── registro.log # Archivo para registro de logs
-├── requirements.txt # Librerías externas necesarias
-└── README.md # Documentación del proyecto
+- │
+- ├── main.py # Archivo principal con menú interactivo
+- ├── tareas.py # Funciones para manejar tareas
+- ├── tareas.json # Archivo JSON para persistencia de datos
+- ├── registro.log # Archivo para registro de logs
+- ├── requirements.txt # Librerías externas necesarias
+- └── README.md # Documentación del proyecto
 
 # Requisitos
 - Python 3.x
-- Librería externa: `rich`
+- Librería externa: `rich` 
 
-# Instlacion 
+# Instalacion 
 1. Crear entorno virtual: python -m venv nombre_del_entorno
 2. Activar entorno: 
-python -m venv venv
-source venv/bin/activate  # En Linux/macOS
-venv\Scripts\activate     # En Windows
+- python -m venv venv
+- source venv/bin/activate  # En Linux/macOS
+- venv\Scripts\activate     # En Windows
 3. Instalar dependencias: pip install -r requirements.txt
 
 # Uso
 1. Ejecutar el programa principal: python main.py
 2. Se mostrará un menú con opciones para:
-Ver todas las tareas
-Agregar una tarea nueva
-Completar una tarea existente
-Eliminar una tarea
-Salir del programa
-
+- Ver todas las tareas
+- Agregar una tarea nueva
+- Completar una tarea existente
+- Eliminar una tarea
+- Salir del programa
 Las tareas se almacenan en tareas.json y cada acción queda registrada en registro.log.
 
 # Ejemplos:
-- Ejemplo de tareas en tareas.json:
-[
-    {
-        "id": 1,
-        "titulo": "Hacer la cama",
-        "descripcion": "Lavar las sábanas primero",
-        "prioridad": "alta",
-        "estado": "pendiente"
-    }
-]
-- Ejemplo de registro de acciones (registro.log):
-2025-06-28 16:00:00,123 - INFO - Tarea agregada: {'id': 3, 'titulo': 'Pagar facturas', ...}
-2025-06-28 16:05:00,456 - INFO - Tarea completada: {'id': 1, 'titulo': 'Comprar comida', ...}
+Ejemplo de tareas en tareas.json:
+- [
+-       {
+-       "id": 1,
+-       "titulo": "Hacer la cama",
+-       "descripcion": "Lavar las sábanas primero",
+-       "prioridad": "alta",
+-       "estado": "pendiente"
+-   }
+- ]
+
+Ejemplo de registro de acciones (registro.log):
+- 2025-06-28 16:00:00,123 - INFO - Tarea agregada: {'id': 3, 'titulo': 'Pagar facturas', ...}
+- 2025-06-28 16:05:00,456 - INFO - Tarea completada: {'id': 1, 'titulo': 'Comprar comida', ...}
 

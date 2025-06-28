@@ -12,17 +12,14 @@ Funciones:
 - listar_tareas: Lista todas las tareas con su estado (completada o pendiente).
 """
 
-########################################################################
 # Importaciones necesarias
 import json #módulo para manejar archivos JSON
 import logging #módulo para manejar logs
 from pathlib import Path #módulo para manejar rutas de archivos
 
-########################################################################
 # Archivo donde se guardan las tareas
 TAREAS_FILE = Path("tareas.json")
 
-########################################################################
 # Configuración del logger para registrar acciones
 logging.basicConfig(
     filename = 'registro.log',
@@ -124,7 +121,7 @@ def eliminar_tarea(id_tarea):
     bool: True si la tarea fue eliminada, False si no se encontró.
     """
     tareas = cargar_tareas()
-    tarea = next((t for tarea in tareas if tarea['id'] == id_tarea), None) # Busca la tarea por su ID
+    tarea = next((t for t in tareas if t['id'] == id_tarea), None) # Busca la tarea por su ID
     if tarea:
         tareas.remove(tarea) # Si la tarea existe, la elimina de la lista
         guardar_tareas(tareas) # Guarda la lista actualizada de tareas
@@ -132,7 +129,6 @@ def eliminar_tarea(id_tarea):
         print(f"Tarea eliminada: {tarea['titulo']}") # Imprime el título de la tarea eliminada
         return True
     return False # Si no se encontró la tarea, devuelve False
-
 
 # Funcion para completar tareas
 def completar_tarea(id_tarea):
@@ -160,17 +156,11 @@ def completar_tarea(id_tarea):
 # Funcion para listar tareas
 def listar_tareas():
     """
-    Lista todas las tareas con su estado (completada o pendiente).
+    Devuelve la lista completa de tareas.
 
-    Retorna:
-    list: Lista de tareas con su estado.
+    Returns:
+        list: Lista de tareas (puede estar vacía).
     """
     tareas = cargar_tareas()
-    if not tareas:
-        logging.info("No hay tareas para mostrar.")
-        return []
-    
-    for tarea in tareas:
-        logging.info(f"Tarea: {tarea['titulo']}, Estado: {tarea['estado']}")
-    
+    logging.info(f"Se consultaron {len(tareas)} tareas.")
     return tareas
